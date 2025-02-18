@@ -54,6 +54,8 @@ export default function Portfolio() {
     if (!carouselApi) return;
 
     const handleSelect = () => {
+      console.log(currentSlide);
+      
       setCurrentSlide(carouselApi.selectedScrollSnap());
     };
 

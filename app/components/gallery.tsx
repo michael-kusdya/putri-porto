@@ -4,13 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
@@ -49,16 +43,11 @@ const styles = `
   }
 `;
 
-interface CarouselApi {
-  on: (event: string, callback: () => void) => void;
-  selectedScrollSnap: () => number;
-}
-
 export default function Gallery() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<CarouselApi | any>(null);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
 
