@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { PanelTopInactive } from "lucide-react"
 
 const styles = `
   .dot {
@@ -34,7 +35,8 @@ export default function Portfolio() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [carouselApi, setCarouselApi] = useState(null)
 
-  const categories = ["all", "mobile", "web", "desktop"]
+  // const categories = ["all", "mobile", "web", "desktop"]
+  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside"]
 
   const works = [
     {
@@ -99,10 +101,10 @@ export default function Portfolio() {
   }, [selectedCategory, carouselApi])
 
   return (
-    <section className="bg-black py-20">
+    <section className="bg-black">
       <style jsx>{styles}</style>
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Portfolio</h2>
+      <div className="container mx-auto px-4 pb-20">
+        {/* <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Portfolio</h2> */}
         <div className="mb-12 flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <Button
@@ -110,7 +112,7 @@ export default function Portfolio() {
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
               className={`text-sm capitalize ${
-                selectedCategory !== category ? "text-white border-white hover:bg-white hover:text-black" : ""
+                selectedCategory !== category ? "text-black border-white hover:bg-black hover:text-white" : ""
               }`}
             >
               {category}
@@ -156,8 +158,8 @@ export default function Portfolio() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex text-white bg-black border border-white hover:bg-zinc-800" />
-              <CarouselNext className="hidden md:flex text-white bg-black border border-white hover:bg-zinc-800" />
+              <CarouselPrevious className="hidden md:flex text-black bg-white border border-white hover:bg-zinc-300" />
+              <CarouselNext className="hidden md:flex text-black bg-white border border-white hover:bg-zinc-300" />
 
               {/* Mobile Dot Navigation */}
               <div className="flex justify-center gap-2 mt-4 md:hidden">
