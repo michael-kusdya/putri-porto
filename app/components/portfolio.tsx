@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+// Style for the dots
 const styles = `
   .dot {
     width: 8px;
@@ -31,43 +32,49 @@ const styles = `
 `;
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [carouselApi, setCarouselApi] = useState(null)
-  const [videoOpen, setVideoOpen] = useState(false)
-  const [selectedVideo, setSelectedVideo] = useState(null)
-  const [selectedTitle, setSelectedTitle] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string>("");
+  const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside"]
+  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside"];
 
   const works = [
-    { id: 1, title: "Social Feed App", category: "mobile", image: "https://i.imgur.com/cirrxL2.png", year: "2024", videoId: "dQw4w9WgXcQ" },
+    { id: 1, title: "Social Feed App", category: "mobile", image: "https://i.imgur.com/cirrxL2.png", year: "2024", videoId: "pSFSTonEYqM" },
     { id: 2, title: "E-commerce Platform", category: "web", image: "https://placehold.co/400x711", year: "2023", videoId: "65Vg3_g1kB8" },
     { id: 3, title: "Productivity Dashboard", category: "desktop", image: "https://placehold.co/400x711", year: "2024", videoId: "dQw4w9WgXcQ" },
     { id: 4, title: "Fitness Tracker", category: "mobile", image: "https://placehold.co/400x711", year: "2023", videoId: "dQw4w9WgXcQ" },
-  ]
+  ];
 
-  const filteredWorks = works.filter((work) => (selectedCategory === "all" ? true : work.category === selectedCategory))
-
-  useEffect(() => {
-    if (!carouselApi) return
-
-    carouselApi.on("select", () => {
-      console.log(currentSlide);
-      setCurrentSlide(carouselApi.selectedScrollSnap())
-    })
-  }, [carouselApi])
+  const filteredWorks = works.filter((work) => (selectedCategory === "all" ? true : work.category === selectedCategory));
 
   useEffect(() => {
-    setCurrentSlide(0)
-    carouselApi?.scrollTo(0)
-  }, [selectedCategory, carouselApi])
+    if (!carouselApi) return;
 
-  const handleItemClick = (videoId, title) => {
-    setSelectedVideo(videoId)
-    setSelectedTitle(title)
-    setVideoOpen(true)
-  }
+    const handleSelect = () => {
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+    };
+
+    carouselApi.on("select", handleSelect);
+
+    return () => {
+      carouselApi.off("select", handleSelect);
+    };
+  }, [carouselApi]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    setCurrentSlide(0);
+    carouselApi.scrollTo(0);
+  }, [selectedCategory, carouselApi]);
+
+  const handleItemClick = (videoId: string, title: string) => {
+    setSelectedVideo(videoId);
+    setSelectedTitle(title);
+    setVideoOpen(true);
+  };
 
   return (
     <section className="bg-black">
@@ -110,7 +117,11 @@ export default function Portfolio() {
                       <CardContent className="p-0">
                         <div className="group relative">
                           <div className="aspect-[9/16] overflow-hidden">
-                            <img src={work.image} alt={work.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <img
+                              src={work.image}
+                              alt={work.title}
+                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                           </div>
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4">
                             <h3 className="text-lg font-semibold text-white">{work.title}</h3>
@@ -142,5 +153,5 @@ export default function Portfolio() {
         </DialogContent>
       </Dialog>
     </section>
-  )
+  );
 }
