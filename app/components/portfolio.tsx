@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { PanelTopInactive } from "lucide-react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 const styles = `
   .dot {
@@ -28,64 +28,27 @@ const styles = `
     opacity: 1;
     transform: scale(1.2);
   }
-`
+`;
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [currentSlide, setCurrentSlide] = useState(0)
   const [carouselApi, setCarouselApi] = useState(null)
+  const [videoOpen, setVideoOpen] = useState(false)
+  const [selectedVideo, setSelectedVideo] = useState(null)
+  const [selectedTitle, setSelectedTitle] = useState("")
 
-  // const categories = ["all", "mobile", "web", "desktop"]
   const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside"]
 
   const works = [
-    {
-      id: 1,
-      title: "Social Feed App",
-      category: "mobile",
-      image: "https://i.imgur.com/cirrxL2.png",
-      year: "2024",
-    },
-    {
-      id: 2,
-      title: "E-commerce Platform",
-      category: "web",
-      image: "https://placehold.co/400x711",
-      year: "2023",
-    },
-    {
-      id: 3,
-      title: "Productivity Dashboard",
-      category: "desktop",
-      image: "https://placehold.co/400x711",
-      year: "2024",
-    },
-    {
-      id: 4,
-      title: "Fitness Tracker",
-      category: "mobile",
-      image: "https://placehold.co/400x711",
-      year: "2023",
-    },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      category: "web",
-      image: "https://placehold.co/400x711",
-      year: "2024",
-    },
-    {
-      id: 6,
-      title: "Video Editing Suite",
-      category: "desktop",
-      image: "https://placehold.co/400x711",
-      year: "2023",
-    },
+    { id: 1, title: "Social Feed App", category: "mobile", image: "https://i.imgur.com/cirrxL2.png", year: "2024", videoId: "dQw4w9WgXcQ" },
+    { id: 2, title: "E-commerce Platform", category: "web", image: "https://placehold.co/400x711", year: "2023", videoId: "65Vg3_g1kB8" },
+    { id: 3, title: "Productivity Dashboard", category: "desktop", image: "https://placehold.co/400x711", year: "2024", videoId: "dQw4w9WgXcQ" },
+    { id: 4, title: "Fitness Tracker", category: "mobile", image: "https://placehold.co/400x711", year: "2023", videoId: "dQw4w9WgXcQ" },
   ]
 
   const filteredWorks = works.filter((work) => (selectedCategory === "all" ? true : work.category === selectedCategory))
 
-  // Update current slide when carousel changes
   useEffect(() => {
     if (!carouselApi) return
 
@@ -94,24 +57,28 @@ export default function Portfolio() {
     })
   }, [carouselApi])
 
-  // Reset current slide when category changes
   useEffect(() => {
     setCurrentSlide(0)
     carouselApi?.scrollTo(0)
   }, [selectedCategory, carouselApi])
 
+  const handleItemClick = (videoId, title) => {
+    setSelectedVideo(videoId)
+    setSelectedTitle(title)
+    setVideoOpen(true)
+  }
+
   return (
     <section className="bg-black">
       <style jsx>{styles}</style>
       <div className="container mx-auto px-4 pb-20">
-        {/* <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">Portfolio</h2> */}
         <div className="mb-12 flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className={`text-sm capitalize ${
+              className={`text-sm capitalize font-semibold ${
                 selectedCategory !== category ? "text-black border-white hover:bg-black hover:text-white" : ""
               }`}
             >
@@ -138,15 +105,11 @@ export default function Portfolio() {
               <CarouselContent>
                 {filteredWorks.map((work) => (
                   <CarouselItem key={work.id} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden bg-zinc-900">
+                    <Card className="overflow-hidden bg-zinc-900 cursor-pointer" onClick={() => handleItemClick(work.videoId, work.title)}>
                       <CardContent className="p-0">
                         <div className="group relative">
                           <div className="aspect-[9/16] overflow-hidden">
-                            <img
-                              src={work.image || "/placeholder.svg"}
-                              alt={work.title}
-                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
+                            <img src={work.image} alt={work.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                           </div>
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4">
                             <h3 className="text-lg font-semibold text-white">{work.title}</h3>
@@ -158,27 +121,25 @@ export default function Portfolio() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex text-black bg-white border border-white hover:bg-zinc-300" />
-              <CarouselNext className="hidden md:flex text-black bg-white border border-white hover:bg-zinc-300" />
-
-              {/* Mobile Dot Navigation */}
-              <div className="flex justify-center gap-2 mt-4 md:hidden">
-                {filteredWorks.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      carouselApi?.scrollTo(index)
-                    }}
-                    className={`dot ${currentSlide === index ? 'active' : ''}`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
             </Carousel>
           </motion.div>
         </AnimatePresence>
       </div>
+      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black">
+          <DialogHeader className="p-4">
+            <DialogTitle className="text-white">{selectedTitle}</DialogTitle>
+          </DialogHeader>
+          <div className="relative pb-[177.78%] h-0 mb-12">
+            <iframe
+              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }
-

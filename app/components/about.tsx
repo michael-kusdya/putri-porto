@@ -7,7 +7,7 @@ export default function About() {
   const skills = ["Oil Painting", "Digital Art", "Sculpture", "Mixed Media", "Art Curation", "Color Theory"]
 
   return (
-    <section className="bg-zinc-900 py-20">
+    <section className="bg-[#121212] py-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start gap-12 lg:flex-row">
           <motion.div
@@ -40,7 +40,7 @@ export default function About() {
               </p>
               <p className="mb-8 text-gray-300">
                 Her art has been featured in galleries across the globe, from New York to Tokyo, and has earned critical
-                acclaim for its ability to provoke thought and emotion. Jane's creative process is deeply influenced by
+                acclaim for its ability to provoke thought and emotion. Jane creative process is deeply influenced by
                 her travels and her commitment to exploring the human condition in all its complexity.
               </p>
             </motion.div>
@@ -54,7 +54,7 @@ export default function About() {
               <h3 className="mb-4 text-2xl font-semibold">Skills</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
-                  <span key={index} className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+                  <span key={index} className="rounded-full bg-[#121212] px-3 py-1 text-sm">
                     {skill}
                   </span>
                 ))}

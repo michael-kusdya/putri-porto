@@ -20,6 +20,13 @@ import {
 } from "@/components/ui/dialog"
 
 const styles = `
+  @media (max-width: 640px) {
+    .dialog-content {
+      max-width: 90vw;
+      margin: 0 auto;
+    }
+  }
+
   .dot {
     width: 8px;
     height: 8px;
@@ -40,7 +47,7 @@ const styles = `
     opacity: 1;
     transform: scale(1.2);
   }
-`
+`;
 
 export default function Gallery() {
   const ref = useRef(null)
@@ -64,14 +71,14 @@ export default function Gallery() {
       alt: "Mobile interface 1",
       title: "Social Feed",
       description: "Engaging social media experience",
-      videoId: "dQw4w9WgXcQ" // Example YouTube video ID
+      videoId: "dQw4w9WgXcQ"
     },
     {
       src: "https://placehold.co/400x711",
       alt: "Mobile interface 2",
       title: "Dark Mode Dashboard",
       description: "Modern analytics view",
-      videoId: "9I7DEUQO8_E"
+      videoId: "65Vg3_g1kB8"
     },
     {
       src: "https://placehold.co/400x711",
@@ -151,9 +158,9 @@ export default function Gallery() {
                             className="object-cover transition-all duration-300 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300">
-                            <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            {/* <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                               <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-black border-b-8 border-b-transparent ml-1" />
-                            </div>
+                            </div> */}
                           </div>
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4">
                             <h3 className="text-lg font-semibold text-white mb-1">{screen.title}</h3>
@@ -187,13 +194,13 @@ export default function Gallery() {
       </div>
 
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="sm:max-w-[800px] p-0 bg-black">
+        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black"> {/* Adjusted max-width */}
           <DialogHeader className="p-4">
             <DialogTitle className="text-white">
-              {mobileScreens[currentSlide]?.title}
+              {mobileScreens.find(screen => screen.videoId === selectedVideo)?.title}
             </DialogTitle>
           </DialogHeader>
-          <div className="relative pb-[56.25%] h-0">
+          <div className="relative pb-[177.78%] h-0 mb-12"> {/* 16:9 aspect ratio */}
             <iframe
               src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

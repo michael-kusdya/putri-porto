@@ -32,7 +32,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="bg-zinc-900 py-20">
+    <section className="bg-[#121212] py-20">
       <div ref={ref} className="container mx-auto px-4">
         <motion.h2
           className="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl"
