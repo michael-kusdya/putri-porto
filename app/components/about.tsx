@@ -54,7 +54,7 @@ export default function About() {
               <h3 className="mb-4 text-2xl font-semibold">Skills</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
-                  <span key={index} className="rounded-full bg-[#121212] px-3 py-1 text-sm">
+                  <span key={index} className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
                     {skill}
                   </span>
                 ))}

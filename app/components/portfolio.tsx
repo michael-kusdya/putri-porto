@@ -4,8 +4,9 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { log } from "console"
 
 const styles = `
   .dot {
@@ -53,6 +54,7 @@ export default function Portfolio() {
     if (!carouselApi) return
 
     carouselApi.on("select", () => {
+      console.log(currentSlide);
       setCurrentSlide(carouselApi.selectedScrollSnap())
     })
   }, [carouselApi])

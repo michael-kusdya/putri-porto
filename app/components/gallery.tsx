@@ -9,8 +9,7 @@ import {
   CarouselContent, 
   CarouselItem, 
   CarouselNext, 
-  CarouselPrevious,
-  useCarousel 
+  CarouselPrevious
 } from "@/components/ui/carousel"
 import {
   Dialog,
