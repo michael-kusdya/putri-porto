@@ -5,12 +5,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { X } from "lucide-react"; // Import the X icon
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 // Add styles
 const styles = `
@@ -185,6 +181,10 @@ export default function Gallery() {
 
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
         <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black">
+        <DialogClose className="absolute right-4 top-4 rounded-full p-1 opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all border border-white">
+          <X className="h-4 w-4 text-white" />
+          <span className="sr-only">Close</span>
+        </DialogClose>
           <DialogHeader className="p-4">
             <DialogTitle className="text-white">
               {mobileScreens.find((screen) => screen.videoId === selectedVideo)?.title}
