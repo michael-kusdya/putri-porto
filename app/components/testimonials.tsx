@@ -8,21 +8,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    name: "Alex Johnson",
-    role: "Art Collector",
-    content: "Jane's work is truly captivating. Her unique style brings a fresh perspective to contemporary art.",
+    name: "Rachel Karina",
+    role: "Co-Founder of Maen Yo! & Startive",
+    content: "I had the opportunity to work with Putri during her time at Startive/Maen Yo! and she was an absolute joy to have on the team! I can confidently say that without her, the company would not be where it was today. \n\ Not only was she self-sufficient but she was quick to adapt to any task thrown at her, which was important as we were working in a startup environment. \n\ Putri also had initiative and drive and often made changes without me having to ask, which makes her a wonderful addition to any future team she finds herself on.",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
-    name: "Sarah Lee",
-    role: "Gallery Owner",
-    content: "Working with Jane has been an absolute pleasure. Her pieces always draw a crowd at our exhibitions.",
+    name: "Sekar Khairunnisa Arum Meidinasari",
+    role: "Game Illustrator at Maen Yo! | 2D Artist",
+    content: "I had the pleasure of working closely with Putri, focusing on game assets and animated illustrations. While I handled visual asset creation, she brought them to life with her exceptional animation expertise. What stood out most was her remarkable organization skills—she meticulously managed work assets, structured folders efficiently, and maintained an impeccable layering system in Adobe After Effects. \n\ Her ability to quickly understand project briefs and seamlessly dive into work was truly impressive. She was highly cooperative, actively contributing to discussions and project goals. In summary, my collaboration with Putri was both productive and inspiring, and I highly recommend her for any animation or creative project.",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
-    name: "Michael Chen",
-    role: "Art Critic",
-    content: "Jane Doe's art pushes boundaries and challenges perceptions. She's definitely an artist to watch.",
+    name: "Raihansyah Dipananda",
+    role: "Social Media Marketing Specialist at Maen Yo! & Startive",
+    content: "I had the pleasure of working with Putri at Maen Yo!, where she thrived as a Motion Graphic Designer. She demonstrated impressive growth in motion graphics and video editing, continually refining her skills and creativity. Her strong foundation in graphic design further enriched her contributions, allowing her to bring a well-rounded perspective to projects. \n\ Beyond her technical abilities, Putri is highly responsible and consistently meets deadlines with excellent time management. Her dedication, professionalism, and strong work ethic made her an invaluable asset to our team. I highly recommend her for any motion graphic design or video editing role.",
     avatar: "/placeholder.svg?height=40&width=40",
   },
 ]
@@ -50,9 +50,11 @@ export default function Testimonials() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Card className="bg-zinc-800">
+              <Card className="bg-[#121212]">
                 <CardContent className="p-6">
-                  <p className="mb-4 text-gray-300">&ldquo;{testimonial.content}&rdquo;</p>
+                <p className="mb-4 text-gray-300" style={{ whiteSpace: "pre-line" }}>
+                  &ldquo;{testimonial.content}&rdquo;
+                </p>
                   <div className="flex items-center">
                     <Avatar className="h-10 w-10">
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} />

@@ -57,47 +57,33 @@ export default function Gallery() {
 
   const mobileScreens = [
     {
-      src: "https://i.imgur.com/cirrxL2.png",
-      alt: "Mobile interface 1",
-      title: "Social Feed",
+      src: "/cover/bri/bri_fitur_impian.png",
+      alt: "BRI Fitur Impian",
+      title: "BRI Fitur Impian",
       description: "Engaging social media experience",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "MOJ_QiAQn24",
     },
     {
-      src: "https://placehold.co/400x711",
-      alt: "Mobile interface 2",
-      title: "Dark Mode Dashboard",
+      src: "/cover/nippon/nippon_balance.png",
+      alt: "Nippon Paint Find Balance",
+      title: "Nippon Paint Find Balance",
       description: "Modern analytics view",
-      videoId: "65Vg3_g1kB8",
+      videoId: "0k3YLuKu_Ns",
     },
     {
-      src: "https://placehold.co/400x711",
-      alt: "Mobile interface 3",
-      title: "E-commerce Browse",
+      src: "/cover/courtside/courtside_how_to_book.png",
+      alt: "How to Book on Courtside",
+      title: "How to Book on Courtside",
       description: "Seamless shopping interface",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "to0dcw1IFdI",
     },
     {
-      src: "https://placehold.co/400x711",
-      alt: "Mobile interface 4",
-      title: "Profile Settings",
+      src: "/cover/maenyo/maenyo_combo.png",
+      alt: "Ads Maen Combo",
+      title: "Ads Maen Combo",
       description: "User-friendly configuration",
-      videoId: "dQw4w9WgXcQ",
-    },
-    {
-      src: "https://placehold.co/400x711",
-      alt: "Mobile interface 5",
-      title: "Media Player",
-      description: "Immersive content experience",
-      videoId: "dQw4w9WgXcQ",
-    },
-    {
-      src: "https://placehold.co/400x711",
-      alt: "Mobile interface 6",
-      title: "Chat Interface",
-      description: "Modern messaging design",
-      videoId: "dQw4w9WgXcQ",
-    },
+      videoId: "UR1FJ5tN7Kk",
+    }
   ];
 
   const handleItemClick = (videoId: string) => {
@@ -150,7 +136,7 @@ export default function Gallery() {
                           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300" />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4">
                             <h3 className="text-lg font-semibold text-white mb-1">{screen.title}</h3>
-                            <p className="text-sm text-zinc-300">{screen.description}</p>
+                            {/* <p className="text-sm text-zinc-300">{screen.description}</p> */}
                           </div>
                         </div>
                       </CardContent>
@@ -181,7 +167,7 @@ export default function Gallery() {
 
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
         <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black">
-        <DialogClose className="absolute right-4 top-4 rounded-full p-1 opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all border border-white">
+        <DialogClose className="absolute right-4 top-4 rounded-full p-1 opacity-70 hover:opacity-100 transition-all border border-white">
           <X className="h-4 w-4 text-white" />
           <span className="sr-only">Close</span>
         </DialogClose>

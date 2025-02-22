@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
-  const skills = ["Oil Painting", "Digital Art", "Sculpture", "Mixed Media", "Art Curation", "Color Theory"]
+  const skills = ["Motion Graphic", "Digital Ads", "Logo Animation", "Video Editing"];
+  const tools = ["After Effects", "Premiere Pro", "Photoshop", "Illustrator"];
 
   return (
     <section className="bg-[#121212] py-20">
@@ -18,7 +19,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <Image
-              src="/placeholder.svg?height=400&width=400"
+              src="/photo/putri.jpg"
               alt="Jane Doe"
               width={400}
               height={400}
@@ -32,16 +33,14 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="mb-4 text-3xl font-bold">About Jane Doe</h2>
+              <h2 className="mb-4 text-3xl font-bold">About Putri</h2>
               <p className="mb-6 text-gray-300">
-                Jane Doe is a visionary artist known for her bold and evocative works that challenge conventional
-                perspectives. With over a decade of experience in the art world, Jane has developed a unique style that
-                blends traditional techniques with contemporary themes.
+                A highly creative and motivated Motion Graphic Designer with four years of experience in the field specializing in animation, video editing, and graphic design.
+                My expertise in design software, combined with a strong sense of aesthetics, allows me to create compelling and polished work.
+                With a strong foundation in motion graphics, I have worked on a variety of projects, including promotional content, branding animations, and social media visuals.
               </p>
               <p className="mb-8 text-gray-300">
-                Her art has been featured in galleries across the globe, from New York to Tokyo, and has earned critical
-                acclaim for its ability to provoke thought and emotion. Jane creative process is deeply influenced by
-                her travels and her commitment to exploring the human condition in all its complexity.
+                Seeking opportunities to contribute my skills and passion for visual storytelling in a dynamic and collaborative design environment.
               </p>
             </motion.div>
 
@@ -51,19 +50,35 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-4 text-2xl font-semibold">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <span key={index} className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
-                    {skill}
-                  </span>
-                ))}
+              <h3 className="mb-4 text-2xl font-semibold">Skills & Tools</h3>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {/* Skills */}
+                <div>
+                  <h4 className="mb-2 text-lg font-medium">Skills</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, index) => (
+                      <span key={index} className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {/* Tools */}
+                <div>
+                  <h4 className="mb-2 text-lg font-medium">Tools</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {tools.map((tool, index) => (
+                      <span key={index} className="rounded-full bg-zinc-800 px-3 py-1 text-sm">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
