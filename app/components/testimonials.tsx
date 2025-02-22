@@ -10,20 +10,20 @@ const testimonials = [
   {
     name: "Rachel Karina",
     role: "Co-Founder of Maen Yo! & Startive",
-    content: "I had the opportunity to work with Putri during her time at Startive/Maen Yo! and she was an absolute joy to have on the team! I can confidently say that without her, the company would not be where it was today. \n\ Not only was she self-sufficient but she was quick to adapt to any task thrown at her, which was important as we were working in a startup environment. \n\ Putri also had initiative and drive and often made changes without me having to ask, which makes her a wonderful addition to any future team she finds herself on.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    content: "I had the opportunity to work with Putri during her time at Startive/Maen Yo! and she was an absolute joy to have on the team! I can confidently say that without her, the company would not be where it was today. Not only was she self-sufficient but she was quick to adapt to any task thrown at her, which was important as we were working in a startup environment. Putri also had initiative and drive and often made changes without me having to ask, which makes her a wonderful addition to any future team she finds herself on.",
+    avatar: "/photo/rachel.jpeg",
   },
   {
     name: "Sekar Khairunnisa Arum Meidinasari",
     role: "Game Illustrator at Maen Yo! | 2D Artist",
-    content: "I had the pleasure of working closely with Putri, focusing on game assets and animated illustrations. While I handled visual asset creation, she brought them to life with her exceptional animation expertise. What stood out most was her remarkable organization skills—she meticulously managed work assets, structured folders efficiently, and maintained an impeccable layering system in Adobe After Effects. \n\ Her ability to quickly understand project briefs and seamlessly dive into work was truly impressive. She was highly cooperative, actively contributing to discussions and project goals. In summary, my collaboration with Putri was both productive and inspiring, and I highly recommend her for any animation or creative project.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    content: "I had the pleasure of collaborating closely with Putri, primarily concentrating on game assets and animated illustrations. While I was responsible for the visual asset creation, Putri was the one who truly brought them to life with her expertise in animation. One thing that continues to amaze me about Putri is her remarkable organization skills.",
+    avatar: "/photo/sekar.jpeg",
   },
   {
     name: "Raihansyah Dipananda",
     role: "Social Media Marketing Specialist at Maen Yo! & Startive",
-    content: "I had the pleasure of working with Putri at Maen Yo!, where she thrived as a Motion Graphic Designer. She demonstrated impressive growth in motion graphics and video editing, continually refining her skills and creativity. Her strong foundation in graphic design further enriched her contributions, allowing her to bring a well-rounded perspective to projects. \n\ Beyond her technical abilities, Putri is highly responsible and consistently meets deadlines with excellent time management. Her dedication, professionalism, and strong work ethic made her an invaluable asset to our team. I highly recommend her for any motion graphic design or video editing role.",
-    avatar: "/placeholder.svg?height=40&width=40",
+    content: "I had the pleasure of working with Putri at Maen Yo!, where she served as a Motion Graphic Designer. During her time with us, Putri demonstrated remarkable growth in her skillset, particularly in motion graphics and video editing. It was truly impressive to witness her rapid development and the increasing sophistication of her work.",
+    avatar: "/photo/masre.jpeg",
   },
 ]
 
