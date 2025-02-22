@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     name: "Sekar Khairunnisa Arum Meidinasari",
-    role: "Game Illustrator at Maen Yo! | 2D Artist",
+    role: "Game Illustrator at Maen Yo! & Startive",
     content: "I had the pleasure of collaborating closely with Putri, primarily concentrating on game assets and animated illustrations. While I was responsible for the visual asset creation, Putri was the one who truly brought them to life with her expertise in animation. One thing that continues to amaze me about Putri is her remarkable organization skills.",
     avatar: "/photo/sekar.jpeg",
   },

@@ -5,10 +5,9 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import { X } from "lucide-react"; // Import the X icon
+import { X } from "lucide-react";
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
-// Add styles
 const styles = `
   @media (max-width: 640px) {
     .dialog-content {
@@ -36,6 +35,25 @@ const styles = `
     background-color: white;
     opacity: 1;
     transform: scale(1.2);
+  }
+
+  .close-button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 50;
+  }
+
+  .close-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
   }
 `;
 
@@ -166,11 +184,11 @@ export default function Gallery() {
       </div>
 
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black">
-        <DialogClose className="absolute right-4 top-4 rounded-full p-1 opacity-70 hover:opacity-100 transition-all border border-white">
-          <X className="h-4 w-4 text-white" />
-          <span className="sr-only">Close</span>
-        </DialogClose>
+        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black border-0">
+          <DialogClose className="close-button">
+            <X className="h-4 w-4 text-white" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
           <DialogHeader className="p-4">
             <DialogTitle className="text-white">
               {mobileScreens.find((screen) => screen.videoId === selectedVideo)?.title}

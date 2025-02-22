@@ -30,6 +30,25 @@ const styles = `
     opacity: 1;
     transform: scale(1.2);
   }
+
+  .close-button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 50;
+  }
+
+  .close-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+  }
 `;
 
 export default function Portfolio() {
@@ -44,7 +63,7 @@ export default function Portfolio() {
 
   const works = [
     { id: 1, title: "BRI Fitur Impian", category: "BRI", image: "/cover/bri/bri_fitur_impian.png", year: "2024", videoId: "MOJ_QiAQn24" },
-    { id: 2, title: "BRI Merchant Self Onboarding", category: "BRI", image: "/cover/bri/bri_merchant_self_onboarding.png", year: "2023", videoId: "65Vg3_g1kB8" },
+    { id: 2, title: "BRI Merchant Self Onboarding", category: "BRI", image: "/cover/bri/bri_merchant_self_onboarding.png", year: "2023", videoId: "un65msoMyBw" },
     { id: 3, title: "BRI Omni Valentine", category: "BRI", image: "/cover/bri/cover_bri_valentine.png", year: "2024", videoId: "UrvWiigsnfo" },
     { id: 4, title: "BRIZZI Topup", category: "BRI", image: "/cover/bri/brizzi_topup.png", year: "2023", videoId: "edB1W9g0nKE" },
     { id: 5, title: "BRI Omni Chinese New Year", category: "BRI", image: "/cover/bri/bri_cny.png", year: "2023", videoId: "3_Pt08TP2pg" },
@@ -176,8 +195,8 @@ export default function Portfolio() {
         </AnimatePresence>
       </div>
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black">
-          <DialogClose className="absolute right-4 top-4 rounded-full p-1 opacity-70 hover:opacity-100 transition-all border border-white">
+        <DialogContent className="dialog-content sm:max-w-[80vw] md:max-w-[400px] p-0 bg-black border-0">
+          <DialogClose className="close-button">
             <X className="h-4 w-4 text-white" />
             <span className="sr-only">Close</span>
           </DialogClose>
