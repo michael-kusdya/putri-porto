@@ -101,6 +101,13 @@ export default function Gallery() {
       title: "Ads Maen Combo",
       description: "User-friendly configuration",
       videoId: "UR1FJ5tN7Kk",
+    },
+    {
+      src: "/cover/summer/cover-summer-winter-1.png",
+      alt: "Summer's Winter #Introduction",
+      title: "Summer's Winter #Introduction",
+      description: "User-friendly configuration",
+      videoId: "VdGzBUTIbUc",
     }
   ];
 
