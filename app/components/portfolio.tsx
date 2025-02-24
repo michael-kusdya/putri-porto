@@ -181,7 +181,7 @@ export default function Portfolio() {
               </div>
 
               <div className="flex justify-center gap-2 mt-4 md:hidden">
-                {works.map((_, index) => (
+                {filteredWorks.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => carouselApi?.scrollTo(index)}

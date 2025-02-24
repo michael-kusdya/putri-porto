@@ -91,7 +91,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Motion Graphic ● Video Editor ● Graphic Design
+          Motion Graphic · Video Editor · Graphic Design
         </motion.p>
       </div>
     </div>
