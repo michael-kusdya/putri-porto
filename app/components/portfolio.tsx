@@ -59,7 +59,7 @@ export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState<string>("");
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside"];
+  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside", "Summer & Winter"];
 
   const works = [
     { id: 1, title: "BRI Fitur Impian", category: "BRI", image: "/cover/bri/bri_fitur_impian.png", year: "2024", videoId: "MOJ_QiAQn24" },
@@ -81,8 +81,12 @@ export default function Portfolio() {
     { id: 17, title: "Courtside Favourite Athlete", category: "Courtside", image: "/cover/courtside/courtside_favourite_athlete.png", year: "2024", videoId: "ZIGQ3zuC90k" },
     { id: 18, title: "How to Book on Courtside", category: "Courtside", image: "/cover/courtside/courtside_how_to_book.png", year: "2024", videoId: "to0dcw1IFdI" },
     { id: 19, title: "Courtside Travel", category: "Courtside", image: "/cover/courtside/courtside_travel.png", year: "2024", videoId: "OdKr22UcZd8" },
-    { id: 20, title: "Courtside Fit Check", category: "Courtside", image: "/cover/courtside/courtside_fit_check.png", year: "2024", videoId: "vxu3UgEj5-E" }
-]
+    { id: 20, title: "Courtside Fit Check", category: "Courtside", image: "/cover/courtside/courtside_fit_check.png", year: "2024", videoId: "vxu3UgEj5-E" },
+    { id: 21, title: "Summer's Winter #Introduction", category: "Summer & Winter", image: "/cover/summer/cover-summer-winter-1.png", year: "2024", videoId: "VdGzBUTIbUc" },
+    { id: 22, title: "Summer's Winter #1", category: "Summer & Winter", image: "/cover/summer/cover-summer-winter-2.png", year: "2024", videoId: "-jB253rF-jc" },
+    { id: 23, title: "Summer's Winter #2", category: "Summer & Winter", image: "/cover/summer/cover-summer-winter-3.png", year: "2024", videoId: "vggupIut1Ew" },
+    { id: 24, title: "Summer's Winter #3", category: "Summer & Winter", image: "/cover/summer/cover-summer-winter-4.png", year: "2024", videoId: "dy7u9Abd_yQ" }  
+  ]
 
 
   const filteredWorks = works.filter((work) => (selectedCategory === "all" ? true : work.category === selectedCategory));
