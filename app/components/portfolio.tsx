@@ -52,14 +52,14 @@ const styles = `
 `;
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("BRI");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<string>("");
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  const categories = ["all", "BRI", "Nippon", "MaenYo!", "Courtside", "Summer's Winter"];
+  const categories = ["BRI", "Nippon", "Sunlight", "MaenYo!", "Courtside", "Other"];
 
   const works = [
     { id: 1, title: "BRI Fitur Impian", category: "BRI", image: "/cover/bri/bri_fitur_impian.png", year: "2024", videoId: "MOJ_QiAQn24" },
@@ -72,7 +72,7 @@ export default function Portfolio() {
     { id: 8, title: "Nippon Paint Find Balance", category: "Nippon", image: "/cover/nippon/nippon_balance.png", year: "2024", videoId: "0k3YLuKu_Ns" },
     { id: 9, title: "Nippon Paint New Year", category: "Nippon", image: "/cover/nippon/nippon_newyear.png", year: "2024", videoId: "nerJHYCqVnk" },
     { id: 10, title: "Nippon Paint 2024 Wrapped", category: "Nippon", image: "/cover/nippon/nippon_wrapped.png", year: "2024", videoId: "emyEHYzyCLY" },
-    { id: 11, title: "Nippon Paint Elastex Fiberflex PU", category: "Nippon", image: "/cover/nippon/nippon_elastex.png", year: "2024", videoId: "qpS9mwGhGz4" },
+    { id: 11, title: "Nippon Paint Elastex Fiberflex PU #1", category: "Nippon", image: "/cover/nippon/nippon_elastex.png", year: "2024", videoId: "qpS9mwGhGz4" },
     { id: 12, title: "Nippon Paint Financial Report", category: "Nippon", image: "/cover/nippon/nippon_finance.png", year: "2024", videoId: "hHGiC_HjU8o" },
     { id: 13, title: "Ads Maen Combo", category: "MaenYo!", image: "/cover/maenyo/maenyo_combo.png", year: "2024", videoId: "UR1FJ5tN7Kk" },
     { id: 14, title: "Ads Maen Cepe", category: "MaenYo!", image: "/cover/maenyo/maenyo_cepe.png", year: "2024", videoId: "XLDwABhKXos" },
@@ -82,10 +82,13 @@ export default function Portfolio() {
     { id: 18, title: "How to Book on Courtside", category: "Courtside", image: "/cover/courtside/courtside_how_to_book.png", year: "2024", videoId: "to0dcw1IFdI" },
     { id: 19, title: "Courtside Travel", category: "Courtside", image: "/cover/courtside/courtside_travel.png", year: "2024", videoId: "OdKr22UcZd8" },
     { id: 20, title: "Courtside Fit Check", category: "Courtside", image: "/cover/courtside/courtside_fit_check.png", year: "2024", videoId: "vxu3UgEj5-E" },
-    { id: 21, title: "Summer's Winter #Introduction", category: "Summer's Winter", image: "/cover/summer/cover-summer-winter-1.png", year: "2024", videoId: "VdGzBUTIbUc" },
-    { id: 22, title: "Summer's Winter #1", category: "Summer's Winter", image: "/cover/summer/cover-summer-winter-2.png", year: "2024", videoId: "-jB253rF-jc" },
-    { id: 23, title: "Summer's Winter #2", category: "Summer's Winter", image: "/cover/summer/cover-summer-winter-3.png", year: "2024", videoId: "vggupIut1Ew" },
-    { id: 24, title: "Summer's Winter #3", category: "Summer's Winter", image: "/cover/summer/cover-summer-winter-4.png", year: "2024", videoId: "dy7u9Abd_yQ" }  
+    { id: 21, title: "Summer's Winter #Introduction", category: "Other", image: "/cover/summer/cover-summer-winter-1.png", year: "2024", videoId: "VdGzBUTIbUc" },
+    { id: 22, title: "Summer's Winter #1", category: "Other", image: "/cover/summer/cover-summer-winter-2.png", year: "2024", videoId: "-jB253rF-jc" },
+    { id: 23, title: "Summer's Winter #2", category: "Other", image: "/cover/summer/cover-summer-winter-3.png", year: "2024", videoId: "vggupIut1Ew" },
+    { id: 24, title: "Summer's Winter #3", category: "Other", image: "/cover/summer/cover-summer-winter-4.png", year: "2024", videoId: "dy7u9Abd_yQ" },
+    { id: 25, title: "Sunlight Adu Cepat", category: "Sunlight", image: "/cover/sunlight/sunlight.png", year: "2024", videoId: "Yb2ktM7O-Oo" },
+    { id: 26, title: "Nippon Paint Elastex Fiberflex PU #2", category: "Nippon", image: "/cover/nippon/nippon_fiberflex.png", year: "2024", videoId: "70BlSNi14Tc" },
+
   ]
 
 
@@ -184,7 +187,7 @@ export default function Portfolio() {
                 <CarouselNext className="text-black bg-white border border-black hover:bg-gray-200 absolute -right-12" />
               </div>
 
-              <div className="flex justify-center gap-2 mt-4 md:hidden">
+              <div className="flex justify-center gap-2 mt-4">
                 {filteredWorks.map((_, index) => (
                   <button
                     key={index}

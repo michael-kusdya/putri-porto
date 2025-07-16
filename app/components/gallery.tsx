@@ -89,6 +89,13 @@ export default function Gallery() {
       videoId: "0k3YLuKu_Ns",
     },
     {
+      src: "/cover/sunlight/sunlight.png",
+      alt: "Sunlight Adu Cepat",
+      title: "Sunlight Adu Cepat",
+      description: "User-friendly configuration",
+      videoId: "Yb2ktM7O-Oo",
+    },
+    {
       src: "/cover/courtside/courtside_how_to_book.png",
       alt: "How to Book on Courtside",
       title: "How to Book on Courtside",
@@ -102,13 +109,13 @@ export default function Gallery() {
       description: "User-friendly configuration",
       videoId: "UR1FJ5tN7Kk",
     },
-    {
-      src: "/cover/summer/cover-summer-winter-1.png",
-      alt: "Summer's Winter #Introduction",
-      title: "Summer's Winter #Introduction",
-      description: "User-friendly configuration",
-      videoId: "VdGzBUTIbUc",
-    }
+    // {
+    //   src: "/cover/summer/cover-summer-winter-1.png",
+    //   alt: "Summer's Winter #Introduction",
+    //   title: "Summer's Winter #Introduction",
+    //   description: "User-friendly configuration",
+    //   videoId: "VdGzBUTIbUc",
+    // }
   ];
 
   const handleItemClick = (videoId: string) => {
@@ -176,7 +183,7 @@ export default function Gallery() {
               <CarouselNext className="text-black bg-white border border-black hover:bg-gray-200 absolute -right-12" />
             </div>
 
-            <div className="flex justify-center gap-2 mt-4 md:hidden">
+            <div className="flex justify-center gap-2 mt-4">
               {mobileScreens.map((_, index) => (
                 <button
                   key={index}
