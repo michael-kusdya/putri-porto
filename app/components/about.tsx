@@ -12,7 +12,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start gap-12 lg:flex-row">
           <motion.div
-            className="w-full lg:w-1/3"
+            className="flex w-full justify-center lg:w-1/3"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -21,8 +21,8 @@ export default function About() {
             <Image
               src="/photo/putri.jpg"
               alt="Jane Doe"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
               className="rounded-lg object-cover"
             />
           </motion.div>
