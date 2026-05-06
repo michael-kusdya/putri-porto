@@ -97,8 +97,9 @@ export default function Portfolio() {
     { id: 33, title: "Pop Mie Bantuin Biar Ga Laper", category: "Pop Mie", image: "/cover/popmie/PopMie_Bantuin.png", year: "2024", videoId: "zCKwky9h8dM" },
     { id: 34, title: "IESR Dear Diary", category: "IESR", image: "/cover/iesr/IESR_1.png", year: "2024", videoId: "qj5UFQ-Y7YU" },
     { id: 35, title: "IESR Kucing", category: "IESR", image: "/cover/iesr/IESR_2.png", year: "2024", videoId: "AI-HPyfNeB4" },
-    { id: 36, title: "IESR Proklamasi Energi Bersih", category: "IESR", image: "/cover/iesr/IESR_4.png", year: "2024", videoId: "YCiE-NROB8E" },
-    { id: 37, title: "IESR Energi Bersih + Bumi Alam Lestari", category: "IESR", image: "/cover/iesr/IESR_6.png", year: "2024", videoId: "YPRUY5dg4sY" },
+    { id: 36, title: "IESR Proklamasi Energi Bersih", category: "IESR", image: "/cover/iesr/IESR_6.png", year: "2024", videoId: "YCiE-NROB8E" },
+    { id: 37, title: "IESR Energi Bersih + Bumi Alam Lestari", category: "IESR", image: "/cover/iesr/IESR_4.png", year: "2024", videoId: "YPRUY5dg4sY" },
+    { id: 38, title: "IESR Voice Note", category: "IESR", image: "/cover/iesr/IESR_7.png", year: "2024", videoId: "KoGLTSVkrho" },
   ]
 
 
