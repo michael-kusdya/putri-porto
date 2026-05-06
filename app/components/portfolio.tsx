@@ -59,7 +59,7 @@ export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState<string>("");
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  const categories = ["BRI", "Nippon", "Sunlight", "MaenYo!", "Courtside", "Other"];
+  const categories = ["BRI", "Nippon", "Royco", "Pop Mie", "IESR","Sunlight", "MaenYo!", "Courtside", "Other"];
 
   const works = [
     { id: 1, title: "BRI Fitur Impian", category: "BRI", image: "/cover/bri/bri_fitur_impian.png", year: "2024", videoId: "MOJ_QiAQn24" },
@@ -88,7 +88,17 @@ export default function Portfolio() {
     { id: 24, title: "Summer's Winter #3", category: "Other", image: "/cover/summer/cover-summer-winter-4.png", year: "2024", videoId: "dy7u9Abd_yQ" },
     { id: 25, title: "Sunlight Adu Cepat", category: "Sunlight", image: "/cover/sunlight/sunlight.png", year: "2024", videoId: "Yb2ktM7O-Oo" },
     { id: 26, title: "Nippon Paint Elastex Fiberflex PU #2", category: "Nippon", image: "/cover/nippon/nippon_fiberflex.png", year: "2024", videoId: "70BlSNi14Tc" },
-
+    { id: 27, title: "Royco Teaser BA", category: "Royco", image: "/cover/royco/Royco_Roycomantis.png", year: "2024", videoId: "2FhtyTgFjdQ" },
+    { id: 28, title: "Royco Winner Announcement", category: "Royco", image: "/cover/royco/Royco_Winner.png", year: "2024", videoId: "w1-hcaRQfe0" },
+    { id: 29, title: "Royco Bumbu Kreasi", category: "Royco", image: "/cover/royco/Royco_Bumbu.png", year: "2024", videoId: "Hc6ph1iQk1g" },
+    { id: 30, title: "Pop Mie Tarot", category: "Pop Mie", image: "/cover/popmie/PopMie_Tarot.png", year: "2024", videoId: "A2IOuZHLkpU" },
+    { id: 31, title: "Pop Mie Sahur Grasak Grusuk", category: "Pop Mie", image: "/cover/popmie/PopMie_Sahur.png", year: "2024", videoId: "KXSpO6Amop8" },
+    { id: 32, title: "Pop Mie Rasa Baru", category: "Pop Mie", image: "/cover/popmie/PopMie_Rasabaru.png", year: "2024", videoId: "CGnCTKEd-9Q" },
+    { id: 33, title: "Pop Mie Bantuin Biar Ga Laper", category: "Pop Mie", image: "/cover/popmie/PopMie_Bantuin.png", year: "2024", videoId: "zCKwky9h8dM" },
+    { id: 34, title: "IESR Dear Diary", category: "IESR", image: "/cover/iesr/IESR_1.png", year: "2024", videoId: "qj5UFQ-Y7YU" },
+    { id: 35, title: "IESR Kucing", category: "IESR", image: "/cover/iesr/IESR_2.png", year: "2024", videoId: "AI-HPyfNeB4" },
+    { id: 36, title: "IESR Proklamasi Energi Bersih", category: "IESR", image: "/cover/iesr/IESR_4.png", year: "2024", videoId: "YCiE-NROB8E" },
+    { id: 37, title: "IESR Energi Bersih + Bumi Alam Lestari", category: "IESR", image: "/cover/iesr/IESR_6.png", year: "2024", videoId: "YPRUY5dg4sY" },
   ]
 
 

@@ -96,6 +96,27 @@ export default function Gallery() {
       videoId: "Yb2ktM7O-Oo",
     },
     {
+      src: "/cover/royco/Royco_Bumbu.png",
+      alt: "Royco Bumbu Kreasi",
+      title: "Royco Bumbu Kreasi",
+      description: "User-friendly configuration",
+      videoId: "Hc6ph1iQk1g",
+    },
+    {
+      src: "/cover/popmie/PopMie_Sahur.png",
+      alt: "Pop Mie Sahur Grasak Grusuk",
+      title: "Pop Mie Sahur Grasak Grusuk",
+      description: "User-friendly configuration",
+      videoId: "KXSpO6Amop8",
+    },
+    {
+      src: "/cover/iesr/IESR_4.png",
+      alt: "IESR Proklamasi Energi Bersih",
+      title: "IESR Proklamasi Energi Bersih",
+      description: "User-friendly configuration",
+      videoId: "YCiE-NROB8E",
+    },
+    {
       src: "/cover/courtside/courtside_how_to_book.png",
       alt: "How to Book on Courtside",
       title: "How to Book on Courtside",
