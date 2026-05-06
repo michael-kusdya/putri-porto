@@ -59,7 +59,7 @@ export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState<string>("");
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  const categories = ["BRI", "Nippon", "Royco", "Pop Mie", "IESR","Sunlight", "MaenYo!", "Courtside", "Other"];
+  const categories = ["Royco", "Pop Mie", "IESR", "BRI", "Nippon","Sunlight", "MaenYo!", "Courtside", "Other"];
 
   const works = [
     { id: 1, title: "BRI Fitur Impian", category: "BRI", image: "/cover/bri/bri_fitur_impian.png", year: "2024", videoId: "MOJ_QiAQn24" },
