@@ -52,7 +52,7 @@ const styles = `
 `;
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState("BRI");
+  const [selectedCategory, setSelectedCategory] = useState("Royco");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
