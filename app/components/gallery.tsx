@@ -110,7 +110,7 @@ export default function Gallery() {
       videoId: "KXSpO6Amop8",
     },
     {
-      src: "/cover/iesr/IESR_4.png",
+      src: "/cover/iesr/IESR_6.png",
       alt: "IESR Proklamasi Energi Bersih",
       title: "IESR Proklamasi Energi Bersih",
       description: "User-friendly configuration",
